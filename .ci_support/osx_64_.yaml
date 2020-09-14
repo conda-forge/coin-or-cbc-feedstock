@@ -1,0 +1,43 @@
+MACOSX_DEPLOYMENT_TARGET:
+- '10.9'
+bzip2:
+- '1'
+c_compiler:
+- clang
+c_compiler_version:
+- '10'
+channel_sources:
+- conda-forge,defaults
+channel_targets:
+- conda-forge main
+cxx_compiler:
+- clangxx
+cxx_compiler_version:
+- '10'
+libblas:
+- 3.8 *netlib
+libcblas:
+- 3.8 *netlib
+liblapack:
+- 3.8.0 *netlib
+macos_machine:
+- x86_64-apple-darwin13.4.0
+ncurses:
+- '6.2'
+openblas:
+- 0.3.*
+pin_run_as_build:
+  bzip2:
+    max_pin: x
+  ncurses:
+    max_pin: x.x
+  readline:
+    max_pin: x
+  zlib:
+    max_pin: x.x
+readline:
+- '8.0'
+target_platform:
+- osx-64
+zlib:
+- '1.2'

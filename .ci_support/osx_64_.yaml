@@ -5,7 +5,7 @@ bzip2:
 c_compiler:
 - clang
 c_compiler_version:
-- '10'
+- '11'
 channel_sources:
 - conda-forge,defaults
 channel_targets:
@@ -13,13 +13,13 @@ channel_targets:
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
-- '10'
+- '11'
 libblas:
 - 3.8 *netlib
 libcblas:
 - 3.8 *netlib
 liblapack:
-- 3.8.0 *netlib
+- 3.8 *netlib
 macos_machine:
 - x86_64-apple-darwin13.4.0
 ncurses:
@@ -39,5 +39,8 @@ readline:
 - '8.0'
 target_platform:
 - osx-64
+zip_keys:
+- - c_compiler_version
+  - cxx_compiler_version
 zlib:
 - '1.2'

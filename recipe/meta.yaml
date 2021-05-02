@@ -35,7 +35,8 @@ test:
     - test -f $PREFIX/include/coin/CbcConfig.h
     - test -f $PREFIX/lib/libCbcSolver${SHLIB_EXT}
     - test -f $PREFIX/lib/libOsiCbc${SHLIB_EXT}
-    - cbc test.lp solve solu - | tr -s ' ' | grep '1 y 1 0'
+    - cbc -import test.lp -solve -solution '$' | tr -s ' ' | grep '1 y 1 0'
+    - cbc test.lp solve solution '$' | tr -s ' ' | grep '1 y 1 0'
 
 about:
   home: https://projects.coin-or.org/Cbc

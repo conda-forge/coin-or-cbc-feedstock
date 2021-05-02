@@ -6,11 +6,7 @@ set -e
 
 UNAME="$(uname)"
 export CFLAGS="${CFLAGS} -O3"
-# Remove the -DCBC_THREAD_SAFE as soon as that is the default
-# in Cbc, which should be the case once the current `refactor`
-# branch is merged. For the relevant diff of CbcSolver.cpp, see:
-# https://github.com/coin-or/Cbc/compare/refactor#diff-6552379e8609a8d357908aab36202c54cb8e73e2b98729f71e4cae2df2eea491
-export CXXFLAGS="${CXXFLAGS} -O3 -DCBC_THREAD_SAFE"
+export CXXFLAGS="${CXXFLAGS} -O3"
 export CXXFLAGS="${CXXFLAGS//-std=c++17/-std=c++11}"
 
 # Use only 1 thread with OpenBLAS to avoid timeouts on CIs.

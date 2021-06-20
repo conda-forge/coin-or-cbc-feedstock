@@ -10,7 +10,7 @@ source:
     sha256: cc44c1950ff4615e7791d7e03ea34318ca001d3cac6dc3f7f5ee392459ce6719
 
 build:
-  number: 1
+  number: 2
   skip: true  # [win]
   run_exports:
     - {{ pin_subpackage(name, max_pin='x.x') }}
@@ -23,25 +23,7 @@ requirements:
     - pkg-config
     - make  # [unix]
   host:
-    - coin-or-utils
     - coin-or-cgl
-    - coin-or-clp
-    - coin-or-osi
-    - libblas
-    - libcblas
-    - liblapack
-    - readline  # [unix]
-    - zlib
-    - bzip2
-    # mumps and nauty are optional deps. currently outdated, leading to solver issues on osx
-    # - mumps
-    # - nauty
-    - ncurses
-    # TODO upstream should link with blas, not openblas
-    - openblas
-  run:
-    - ncurses
-    - openblas
   run_constrained:
     - coincbc * *_metapackage
 

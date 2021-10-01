@@ -12,7 +12,7 @@ source:
       - 0001-Patch-for-downstream.patch
 
 build:
-  number: 2
+  number: 3
   skip: true  # [win]
   run_exports:
     - {{ pin_subpackage(name, max_pin='x.x') }}
@@ -30,12 +30,15 @@ requirements:
     - coincbc * *_metapackage
 
 test:
+  files:
+    - test.lp
   commands:
     - test -f $PREFIX/lib/libCbc${SHLIB_EXT}
     - test -f $PREFIX/include/coin/CbcConfig.h
     - test -f $PREFIX/lib/libCbcSolver${SHLIB_EXT}
     - test -f $PREFIX/lib/libOsiCbc${SHLIB_EXT}
-    - echo ? | cbc
+    - cbc -import test.lp -solve -solution '$' | tr -s ' ' | grep '1 y 1 0'
+    - cbc test.lp solve solution '$' | tr -s ' ' | grep '1 y 1 0'
 
 about:
   home: https://projects.coin-or.org/Cbc

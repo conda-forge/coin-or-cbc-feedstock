@@ -12,10 +12,10 @@ source:
       - 0001-Patch-for-downstream.patch
 
 build:
-  number: 4
+  number: 5
   skip: true  # [win]
   run_exports:
-    - {{ pin_subpackage(name, max_pin='x.x') }}
+    - {{ pin_subpackage(name, min_pin='x.x', max_pin='x.x') }}
 
 requirements:
   build:

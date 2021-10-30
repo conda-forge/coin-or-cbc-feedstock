@@ -66,6 +66,9 @@ outputs:
     requirements:
       run:
         - {{ pin_subpackage('coin-or-cbc', exact=True) }}
+    test:
+      commands:
+        - test -f $PREFIX/lib/libCbc${SHLIB_EXT}
 
 
 about:

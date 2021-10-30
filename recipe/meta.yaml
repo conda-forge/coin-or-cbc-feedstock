@@ -1,5 +1,6 @@
 {% set name = "coin-or-cbc" %}
 {% set version = "2.10.5" %}
+{% set build_num = 0 %}
 
 package:
   name: {{ name|lower }}-meta
@@ -12,7 +13,7 @@ source:
       - 0001-Patch-for-downstream.patch
 
 build:
-  number: 0
+  number: {{ build_num }}
 
 outputs:
   - name: {{ name|lower }}
@@ -63,9 +64,10 @@ outputs:
   - name: coincbc
     build:
       noarch: generic
+      string: {{ build_num }}_metapackage
     requirements:
       run:
-        - {{ pin_subpackage('coin-or-cbc', exact=True) }}
+        - coin-or-cbc {{ version }}
     test:
       commands:
         - test -f $PREFIX/lib/libCbc${SHLIB_EXT}

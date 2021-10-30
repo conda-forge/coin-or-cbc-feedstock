@@ -71,6 +71,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-coin--or--cbc-green.svg)](https://anaconda.org/conda-forge/coin-or-cbc) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/coin-or-cbc.svg)](https://anaconda.org/conda-forge/coin-or-cbc) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/coin-or-cbc.svg)](https://anaconda.org/conda-forge/coin-or-cbc) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/coin-or-cbc.svg)](https://anaconda.org/conda-forge/coin-or-cbc) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-coincbc-green.svg)](https://anaconda.org/conda-forge/coincbc) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/coincbc.svg)](https://anaconda.org/conda-forge/coincbc) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/coincbc.svg)](https://anaconda.org/conda-forge/coincbc) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/coincbc.svg)](https://anaconda.org/conda-forge/coincbc) |
 
 Installing coin-or-cbc
 ======================
@@ -82,10 +83,10 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `coin-or-cbc` can be installed with:
+Once the `conda-forge` channel has been enabled, `coin-or-cbc, coincbc` can be installed with:
 
 ```
-conda install coin-or-cbc
+conda install coin-or-cbc coincbc
 ```
 
 It is possible to list all of the versions of `coin-or-cbc` available on your platform with:

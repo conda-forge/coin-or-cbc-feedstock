@@ -2,7 +2,7 @@
 {% set version = "2.10.5" %}
 
 package:
-  name: {{ name|lower }}
+  name: {{ name|lower }}-meta
   version: {{ version }}
 
 source:
@@ -14,6 +14,8 @@ source:
 build:
   number: 0
 
+outputs:
+  - name: {{ name|lower }}
   build:
     number: 6
     skip: true  # [win]
@@ -58,7 +60,16 @@ build:
       project), JuMP, Mathematica, MiniZinc, MPL (through the CoinMP project), PuLP,
       Python (e.g., cbcpy), and OpenSolver for Excel, among others.
 
+    - name: coincbc
+    build:
+      noarch: generic
+    requirements:
+      run:
+        - {{ pin_subpackage({{ name|lower }}, exact=True) }}
+
+
 extra:
   recipe-maintainers:
     - wolfv
     - tkralphs
+  feedstock-name: {{ name|lower }}

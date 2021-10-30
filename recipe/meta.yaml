@@ -17,6 +17,7 @@ build:
 
 outputs:
   - name: {{ name|lower }}
+    script: build_package.sh
     build:
       number: 6
       skip: true  # [win]

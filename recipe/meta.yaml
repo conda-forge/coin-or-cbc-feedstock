@@ -35,7 +35,7 @@ outputs:
         - coin-or-cgl
         - coin-or-clp
         - coin-or-osi
-        - coin-or-coinutils
+        - coin-or-utils
       run_constrained:
         - coincbc * *_metapackage
 

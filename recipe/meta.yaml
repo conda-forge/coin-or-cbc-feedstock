@@ -34,6 +34,8 @@ outputs:
       host:
         - coin-or-cgl
         - coin-or-clp
+        - coin-or-osi
+        - coin-or-coinutils
       run_constrained:
         - coincbc * *_metapackage
 

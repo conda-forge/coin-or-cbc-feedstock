@@ -33,6 +33,7 @@ outputs:
         - make  # [unix]
       host:
         - coin-or-cgl
+        - coin-or-clp
       run_constrained:
         - coincbc * *_metapackage
 

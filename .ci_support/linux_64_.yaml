@@ -8,16 +8,22 @@ channel_sources:
 - conda-forge
 channel_targets:
 - conda-forge main
+coin_or_cgl:
+- '0.60'
+coin_or_clp:
+- '1.17'
+coin_or_osi:
+- '0.108'
+coin_or_utils:
+- '2.11'
 cxx_compiler:
 - gxx
 cxx_compiler_version:
 - '9'
 docker_image:
-- quay.io/condaforge/linux-anvil-comp7
+- quay.io/condaforge/linux-anvil-cos7-x86_64
 target_platform:
 - linux-64
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
-- - cdt_name
-  - docker_image

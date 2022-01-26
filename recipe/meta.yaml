@@ -1,5 +1,5 @@
 {% set name = "coin-or-cbc" %}
-{% set version = "2.10.5" %}
+{% set version = "2.10.7" %}
 {% set build_num = 0 %}
 
 package:
@@ -7,11 +7,11 @@ package:
   version: {{ version }}
 
 source:
-    url: https://github.com/coin-or/Cbc/archive/releases/{{ version }}.tar.gz
-    sha256: cc44c1950ff4615e7791d7e03ea34318ca001d3cac6dc3f7f5ee392459ce6719
-    patches:
-      - 0001-Patch-for-downstream.patch
-      - 0002-Patch-build.patch
+  url: https://github.com/coin-or/Cbc/archive/releases/{{ version }}.tar.gz
+  sha256: 5aa5490e2bc39c3c03f3636c9bca459cb3f8f365e0280fd0c4759ce3119e5b19
+  patches:
+    - 0001-Patch-for-downstream.patch
+    - 0002-Patch-build.patch
 
 build:
   number: {{ build_num }}
@@ -20,7 +20,7 @@ outputs:
   - name: {{ name|lower }}
     script: build_package.sh
     build:
-      number: 6
+      number: 0
       skip: true  # [win]
       run_exports:
         - {{ pin_subpackage(name, min_pin='x.x', max_pin='x.x') }}

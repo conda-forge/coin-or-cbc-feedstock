@@ -10,8 +10,8 @@ source:
   url: https://github.com/coin-or/Cbc/archive/releases/{{ version }}.tar.gz
   sha256: 5aa5490e2bc39c3c03f3636c9bca459cb3f8f365e0280fd0c4759ce3119e5b19
   patches:
-    - 0001-Patch-for-downstream.patch
-    - 0002-Patch-build.patch
+    - patches/0001-Patch-for-downstream.patch
+    - patches/0002-Patch-build.patch
 
 build:
   number: {{ build_num }}

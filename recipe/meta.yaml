@@ -1,9 +1,7 @@
-{% set name = "coin-or-cbc" %}
 {% set version = "2.10.7" %}
-{% set build_num = 0 %}
 
 package:
-  name: {{ name|lower }}-meta
+  name: coin-or-cbc-meta
   version: {{ version }}
 
 source:
@@ -14,16 +12,15 @@ source:
     - patches/0002-Patch-build.patch
 
 build:
-  number: {{ build_num }}
+  number: 0
+  skip: true  # [win]
 
 outputs:
-  - name: {{ name|lower }}
+  - name: coin-or-cbc
     script: build_package.sh
     build:
-      number: 0
-      skip: true  # [win]
       run_exports:
-        - {{ pin_subpackage(name, min_pin='x.x', max_pin='x.x') }}
+        - {{ pin_subpackage("coin-or-cbc", min_pin='x.x', max_pin='x.x') }}
 
     requirements:
       build:
@@ -69,7 +66,7 @@ outputs:
   - name: coincbc
     build:
       noarch: generic
-      string: {{ build_num }}_metapackage
+      string: {{ PKG_BUILDNUM }}_metapackage
     requirements:
       run:
         - coin-or-cbc {{ version }}
@@ -98,4 +95,4 @@ extra:
   recipe-maintainers:
     - wolfv
     - tkralphs
-  feedstock-name: {{ name|lower }}
+  feedstock-name: coin-or-cbc

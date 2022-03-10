@@ -1,7 +1,7 @@
-From abf1ced809a28c2d5de3ea16723d3b003f822acf Mon Sep 17 00:00:00 2001
+From fa9c14b24df673cffad319351ce48dd1d64193f3 Mon Sep 17 00:00:00 2001
 From: BastianZim <10774221+BastianZim@users.noreply.github.com>
 Date: Fri, 1 Oct 2021 14:32:59 +0200
-Subject: [PATCH 1/2] Patch for downstream
+Subject: [PATCH] Patch for downstream
 
 ---
  Cbc/cbc.pc.in | 5 +++--

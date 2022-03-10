@@ -94,4 +94,5 @@ extra:
   recipe-maintainers:
     - wolfv
     - tkralphs
+    - h-vetinari
   feedstock-name: coin-or-cbc

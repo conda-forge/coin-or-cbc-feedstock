@@ -1,9 +1,13 @@
-MACOSX_DEPLOYMENT_TARGET:
-- '10.9'
+BUILD:
+- aarch64-conda_cos7-linux-gnu
 c_compiler:
-- clang
+- gcc
 c_compiler_version:
-- '13'
+- '10'
+cdt_arch:
+- aarch64
+cdt_name:
+- cos7
 channel_sources:
 - conda-forge
 channel_targets:
@@ -17,13 +21,13 @@ coin_or_osi:
 coin_or_utils:
 - '2.11'
 cxx_compiler:
-- clangxx
+- gxx
 cxx_compiler_version:
-- '13'
-macos_machine:
-- x86_64-apple-darwin13.4.0
+- '10'
+docker_image:
+- quay.io/condaforge/linux-anvil-aarch64
 target_platform:
-- osx-64
+- linux-aarch64
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version

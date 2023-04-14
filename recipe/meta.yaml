@@ -11,7 +11,7 @@ source:
     - patches/0001-Patch-for-downstream.patch
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
 
 outputs:

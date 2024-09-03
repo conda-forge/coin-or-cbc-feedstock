@@ -11,7 +11,7 @@ source:
     - patches/0001-Patch-for-downstream.patch
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
 
 outputs:
@@ -19,7 +19,7 @@ outputs:
     script: build_package.sh
     build:
       run_exports:
-        - {{ pin_subpackage("coin-or-cbc", min_pin='x.x', max_pin='x.x') }}
+        - {{ pin_subpackage("coin-or-cbc", max_pin='x.x') }}
 
     requirements:
       build:
@@ -67,6 +67,8 @@ outputs:
     build:
       noarch: generic
       string: {{ PKG_BUILDNUM }}_metapackage
+      run_exports:
+        - {{ pin_subpackage("coin-or-cbc", max_pin='x.x') }}
     requirements:
       run:
         - coin-or-cbc {{ version }}

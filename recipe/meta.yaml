@@ -49,7 +49,7 @@ outputs:
         - mkl-static  # [win]
         - zlib
         - bzip2      
-    run_constrained:
+      run_constrained:
         - coincbc * *_metapackage
 
     test:

@@ -15,7 +15,9 @@ build:
 
 outputs:
   - name: coin-or-cbc
-    script: build_package.sh
+   script:
+       -  build_package.sh  # [unix]
+       -  build_package.bat  # [win]
     build:
       run_exports:
         - {{ pin_subpackage("coin-or-cbc", max_pin='x.x') }}

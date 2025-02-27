@@ -11,15 +11,15 @@ source:
     - patches/0001-Patch-for-downstream.patch
 
 build:
-  number: 1
-  skip: true  # [win]
+  number: 2
 
 outputs:
   - name: coin-or-cbc
-    script: build_package.sh
+    script: build.sh
     build:
       run_exports:
         - {{ pin_subpackage("coin-or-cbc", max_pin='x.x') }}
+        - mkl-static  # [win]
 
     requirements:
       build:
@@ -27,24 +27,42 @@ outputs:
         - {{ compiler('c') }}
         - {{ stdlib('c') }}
         - {{ compiler('cxx') }}
-        - pkg-config
+        - {{ compiler('fortran') }}  # [unix]
+        - pkg-config  # [unix]
         - make  # [unix]
+        - m2-make  # [win]
+        - m2-pkg-config  # [win]
+        - m2-grep  # [win]
+        - m2-sed  # [win]
+        - m2-bash  # [win]
+        - m2-base  # [win]
       host:
         - coin-or-cgl
         - coin-or-clp
         - coin-or-osi
         - coin-or-utils
-      run_constrained:
+        - blas-devel
+        - libblas  # [unix]
+        - libcblas
+        - liblapack
+        - liblapacke  # [unix]
+        - mkl-static  # [win]
+        - zlib
+        - bzip2      run_constrained:
         - coincbc * *_metapackage
 
     test:
       files:
         - test.lp
       commands:
-        - test -f $PREFIX/lib/libCbc${SHLIB_EXT}
-        - test -f $PREFIX/include/coin/CbcConfig.h
-        - test -f $PREFIX/lib/libCbcSolver${SHLIB_EXT}
-        - test -f $PREFIX/lib/libOsiCbc${SHLIB_EXT}
+        - test -f $PREFIX/lib/libCbc${SHLIB_EXT}  # [unix]
+        - test -f $PREFIX/include/coin/CbcConfig.h  # [unix]
+        - test -f $PREFIX/lib/libCbcSolver${SHLIB_EXT}  # [unix]
+        - test -f $PREFIX/lib/libOsiCbc${SHLIB_EXT}  # [unix]
+        - if not exist %LIBRARY_LIB%/libCbc.lib exit 1  # [win]
+        - if not exist %LIBRARY_LIB%/libCbcSolver.lib exit 1  # [win]
+        - if not exist %LIBRARY_LIB%/libOsiCbc.lib exit 1  # [win]
+        - if not exist %LIBRARY_INC%/coin/CbcConfig.h exit 1  # [win]
         - cbc -import test.lp -solve -solution '$' | tr -s ' ' | grep '1 y 1 0'
         - cbc test.lp solve solution '$' | tr -s ' ' | grep '1 y 1 0'
 

@@ -23,4 +23,4 @@ set CHERE_INVOKING=1
 set BUILD_PLATFORM=win-64
 
 
-bash -lc "./build.sh"
+bash -lc "./build_package.sh"

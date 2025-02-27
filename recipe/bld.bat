@@ -1,4 +1,4 @@
-copy "%RECIPE_DIR%\build.sh" .
+copy "%RECIPE_DIR%\build_package.sh" .
 set PREFIX_WIN=%PREFIX%
 set PREFIX=%PREFIX:\=/%
 set LIBRARY_PREFIX_WIN=%LIBRARY_PREFIX%

@@ -40,14 +40,8 @@ fi
 ./configure \
   --prefix="${USE_PREFIX}" \
   --exec-prefix="${USE_PREFIX}" \
-  #"${COINUTILS_LIB[@]}" \
-  #"${COINUTILS_INC[@]}" \
-  #"${OSI_LIB[@]}" \
-  #"${OSI_INC[@]}" \
   "${CLP_LIB[@]}" \
   "${CLP_INC[@]}" \
-  #"${CGL_LIB[@]}" \
-  #"${CGL_INC[@]}" \
   "${COINDEPEND_LIB[@]}" \
   "${COINDEPEND_INC[@]}" \
   "${EXTRA_FLAGS[@]}" || cat Cbc/config.log

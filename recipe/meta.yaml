@@ -54,6 +54,8 @@ outputs:
         - coincbc * *_metapackage
 
     test:
+      requires:
+        - m2-grep  # [win]
       files:
         - test.lp
       commands:

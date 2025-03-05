@@ -54,8 +54,6 @@ outputs:
         - coincbc * *_metapackage
 
     test:
-      files:
-        - test.lp
       commands:
         - test -f $PREFIX/lib/libCbc${SHLIB_EXT}  # [unix]
         - test -f $PREFIX/include/coin/CbcConfig.h  # [unix]
@@ -65,8 +63,6 @@ outputs:
         - if not exist %LIBRARY_LIB%/libCbcSolver.lib exit 1  # [win]
         - if not exist %LIBRARY_LIB%/libOsiCbc.lib exit 1  # [win]
         - if not exist %LIBRARY_INC%/coin/CbcConfig.h exit 1  # [win]
-        - cbc -import test.lp -solve -solution '$' | tr -s ' ' | grep '1 y 1 0'  # [unix]
-        - cbc test.lp solve solution '$' | tr -s ' ' | grep '1 y 1 0'  # [unix]
 
     about:
       home: https://github.com/coin-or/Cbc

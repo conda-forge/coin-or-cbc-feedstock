@@ -3,7 +3,7 @@ About coin-or-cbc-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/coin-or-cbc-feedstock/blob/main/LICENSE.txt)
 
-Home: https://projects.coin-or.org/Cbc
+Home: https://github.com/coin-or/Cbc
 
 Package license: EPL-2.0
 
@@ -69,6 +69,13 @@ Current build status
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=10719&branchName=main">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/coin-or-cbc-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=10719&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/coin-or-cbc-feedstock?branchName=main&jobName=win&configuration=win%20win_64_" alt="variant">
                 </a>
               </td>
             </tr>

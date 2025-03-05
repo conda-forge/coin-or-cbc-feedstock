@@ -1,0 +1,28 @@
+bzip2:
+- '1'
+c_compiler:
+- vs2019
+c_stdlib:
+- vs
+channel_sources:
+- conda-forge
+channel_targets:
+- conda-forge main
+coin_or_cgl:
+- '0.60'
+coin_or_clp:
+- '1.17'
+coin_or_osi:
+- '0.108'
+coin_or_utils:
+- '2.11'
+cxx_compiler:
+- vs2019
+libcblas:
+- 3.9.* *netlib
+liblapack:
+- 3.9.* *netlib
+target_platform:
+- win-64
+zlib:
+- '1'

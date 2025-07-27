@@ -11,7 +11,7 @@ source:
     - patches/0001-Patch-for-downstream.patch
 
 build:
-  number: 2
+  number: 3
 
 outputs:
   - name: coin-or-cbc
@@ -20,7 +20,6 @@ outputs:
     build:
       run_exports:
         - {{ pin_subpackage("coin-or-cbc", max_pin='x.x') }}
-        - mkl-static  # [win]
 
     requirements:
       build:
@@ -43,11 +42,10 @@ outputs:
         - coin-or-osi
         - coin-or-utils
         - blas-devel
-        - libblas  # [unix]
+        - libblas
         - libcblas
         - liblapack
-        - liblapacke  # [unix]
-        - mkl-static  # [win]
+        - liblapacke
         - zlib
         - bzip2      
       run_constrained:
@@ -63,6 +61,9 @@ outputs:
         - if not exist %LIBRARY_LIB%/libCbcSolver.lib exit 1  # [win]
         - if not exist %LIBRARY_LIB%/libOsiCbc.lib exit 1  # [win]
         - if not exist %LIBRARY_INC%/coin/CbcConfig.h exit 1  # [win]
+        - strings %LIBRARY_LIB%\\libCoinUtils.lib | findstr /C:"RuntimeLibrary=MD"  # [win]
+      requires:
+        - binutils  # [win]
 
     about:
       home: https://github.com/coin-or/Cbc

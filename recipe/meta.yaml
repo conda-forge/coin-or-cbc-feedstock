@@ -20,6 +20,7 @@ outputs:
     build:
       run_exports:
         - {{ pin_subpackage("coin-or-cbc", max_pin='x.x') }}
+        - mkl-static  # [win]
 
     requirements:
       build:
@@ -42,10 +43,11 @@ outputs:
         - coin-or-osi
         - coin-or-utils
         - blas-devel
-        - libblas
+        - libblas  # [unix]
         - libcblas
         - liblapack
-        - liblapacke
+        - liblapacke  # [unix]
+        - mkl-static  # [win]
         - zlib
         - bzip2      
       run_constrained:

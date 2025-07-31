@@ -1,7 +1,7 @@
 bzip2:
 - '1'
 c_compiler:
-- vs2019
+- vs2022
 c_stdlib:
 - vs
 channel_sources:
@@ -17,7 +17,7 @@ coin_or_osi:
 coin_or_utils:
 - '2.11'
 cxx_compiler:
-- vs2019
+- vs2022
 libcblas:
 - 3.9.* *netlib
 liblapack:

@@ -11,7 +11,7 @@ source:
     - patches/0001-Patch-for-downstream.patch
 
 build:
-  number: 3
+  number: 4
 
 outputs:
   - name: coin-or-cbc
@@ -20,7 +20,7 @@ outputs:
     build:
       run_exports:
         - {{ pin_subpackage("coin-or-cbc", max_pin='x.x') }}
-        - mkl-static  # [win]
+        - mkl  # [win]
 
     requirements:
       build:
@@ -47,7 +47,7 @@ outputs:
         - libcblas
         - liblapack
         - liblapacke  # [unix]
-        - mkl-static  # [win]
+        - mkl  # [win]
         - zlib
         - bzip2      
       run_constrained:

@@ -9,7 +9,7 @@ else
 fi
 
 if [[ "${target_platform}" == win-* ]]; then
-  CLP_LIB=( --with-clp-lib='${LIBRARY_PREFIX}/lib/libClp.lib ${LIBRARY_PREFIX}/lib/libOsiClp.lib' )
+  CLP_LIB=( --with-clp-lib='${LIBRARY_PREFIX}/lib/mkl_rt.lib ${LIBRARY_PREFIX}/lib/libClp.lib ${LIBRARY_PREFIX}/lib/libOsiClp.lib' )
   CLP_INC=( --with-clp-incdir='${LIBRARY_PREFIX_COIN}' )
   COINDEPEND_LIB=( --with-coindepend-lib='${LIBRARY_PREFIX}/lib/libCoinUtils.lib ${LIBRARY_PREFIX}/lib/libOsi.lib ${LIBRARY_PREFIX}/lib/libCgl.lib' )
   COINDEPEND_INC=( --with-coindepend-incdir='${LIBRARY_PREFIX_COIN}' )

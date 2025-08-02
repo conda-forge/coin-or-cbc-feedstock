@@ -41,6 +41,7 @@ outputs:
         - coin-or-clp
         - coin-or-osi
         - coin-or-utils
+        - mkl-devel  # [win]
         - zlib
         - bzip2      
       run_constrained:

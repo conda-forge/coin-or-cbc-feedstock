@@ -27,7 +27,6 @@ outputs:
         - {{ compiler('c') }}
         - {{ stdlib('c') }}
         - {{ compiler('cxx') }}
-        - {{ compiler('fortran') }}  # [unix]
         - pkg-config  # [unix]
         - make  # [unix]
         - m2-make  # [win]
@@ -42,13 +41,7 @@ outputs:
         - coin-or-osi
         - coin-or-utils
         - blas-devel
-        - libblas  # [unix]
-        - libcblas
-        - liblapack
-        - liblapacke  # [unix]
         - mkl-devel  # [win]
-        - zlib
-        - bzip2      
       run_constrained:
         - coincbc * *_metapackage
 

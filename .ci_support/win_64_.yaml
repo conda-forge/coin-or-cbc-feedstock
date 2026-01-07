@@ -22,8 +22,8 @@ libcblas:
 - 3.9.* *netlib
 liblapack:
 - 3.9.* *netlib
-mkl:
-- '2024'
+mkl_devel:
+- '2025'
 target_platform:
 - win-64
 zlib:

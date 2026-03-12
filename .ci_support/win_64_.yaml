@@ -18,10 +18,6 @@ coin_or_utils:
 - '2.11'
 cxx_compiler:
 - vs2022
-libcblas:
-- 3.9.* *netlib
-liblapack:
-- 3.9.* *netlib
 mkl_devel:
 - '2025'
 target_platform:

@@ -19,7 +19,7 @@ coin_or_utils:
 cxx_compiler:
 - vs2022
 mkl_devel:
-- '2025'
+- '2026'
 target_platform:
 - win-64
 zlib:
